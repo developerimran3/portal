@@ -1,4 +1,4 @@
-@extends('staff.layouts.app')
+@extends('student.layouts.app')
 @section('main')
     <div class="page-wrapper">
 
@@ -8,7 +8,7 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title">Welcome {{ Auth::guard('staff')->user()->name }}</h3>
+                        <h3 class="page-title">Welcome {{ Auth::guard('student')->user()->name }}</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ul>

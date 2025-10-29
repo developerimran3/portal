@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>{{ Auth::guard('staff')->user()->name }} - Dashboard</title>
+    <title>{{ Auth::guard('teacher')->user()->name }} - Dashboard</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -37,12 +37,12 @@
     <div class="main-wrapper">
 
         <!-- Header -->
-        @include('staff.layouts.components.header')
+        @include('teacher.layouts.components.header')
 
         <!-- /Header -->
 
         <!-- Sidebar -->
-        @include('staff.layouts.components.sidebar')
+        @include('teacher.layouts.components.sidebar')
 
         <!-- /Sidebar -->
 

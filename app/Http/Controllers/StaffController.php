@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller
 {
-    public function dashboard()
+    public function staffDashboard()
     {
         return view("staff.index");
     }
@@ -19,7 +19,7 @@ class StaffController extends Controller
         return view("staff.register");
     }
 
-    public function register(Request $request)
+    public function staffRegister(Request $request)
     {
         //Form Valadation
         $request->validate([
@@ -50,7 +50,7 @@ class StaffController extends Controller
         return view("staff.login");
     }
 
-    public function login(Request $request)
+    public function staffLogin(Request $request)
     {
         $credentials =  $request->validate([
             'email'    => 'required|email|exists:staff,email',
@@ -68,19 +68,9 @@ class StaffController extends Controller
             'password' => 'The password is incorrect.',
         ]);
     }
-    // public function login(Request $request)
-    // {
-    //     $staff = $request->validate([
-    //         "email"    => "required|email|exists:staff",
-    //         "password" => "required",
-    //     ]);
 
-    //     if (Auth::guard('staff')->attempt($staff)) {
-    //         return redirect()->route('staff.profile')->with('success', 'Login Success');
-    //     }
-    // }
 
-    public function profile()
+    public function staffProfile()
     {
         return view("staff.profile");
     }
@@ -92,7 +82,7 @@ class StaffController extends Controller
     }
 
 
-    public function logout(Request $request)
+    public function staffLogout(Request $request)
     {
         Auth::guard("staff")->logout();
         return redirect()->route("staff.login");

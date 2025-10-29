@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
     <!--[if lt IE 9]>
    <script src="assets/js/html5shiv.min.js"></script>
    <script src="assets/js/respond.min.js"></script>
@@ -30,23 +29,24 @@
 
 <body>
     @include('layouts.header-menu')
+
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
         <div class="login-wrapper">
             <div class="container">
                 <div class="loginbox">
                     <div class="login-left">
-                        <img class="img-fluid" src="{{ asset('assets/img/staff.webp') }}" alt="Logo">
+                        <img class="img-fluid" src="{{ asset('assets/img/teacher.png') }}" alt="Logo">
                     </div>
                     <div class="login-right">
                         <div class="login-right-wrap">
-                            <h1>Staff Register</h1>
+                            <h1>Teacher Register</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <div class="form-group">
                                 @include('layouts.message')
                             </div>
                             <!-- Form -->
-                            <form action="{{ route('staff.register') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('teacher.register') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Name" name="name"
@@ -65,19 +65,14 @@
                                         value="{{ old('phone') }}">
                                 </div>
                                 <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Degree" name="degree"
+                                        value="{{ old('degree') }}">
+                                </div>
+                                <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Address" name="address"
                                         value="{{ old('address') }}">
                                 </div>
-                                <div class="form-group">
-                                    <select class="form-control" name="role">
-                                        <option>-- Depernment --</option>
-                                        <option value="Account">Account</option>
-                                        <option value="Manager">Manager</option>
-                                        <option value="Librarian">Librarian</option>
-                                        <option value="Nurses">Nurses</option>
-                                        <option value="Bus Drivers">Bus Drivers</option>
-                                    </select>
-                                </div>
+
                                 <div class="form-group">
                                     <input class="form-control" type="file" name="photo"
                                         value="{{ old('photo') }}">
@@ -96,7 +91,7 @@
                             </form>
                             <!-- /Form -->
                             <div class="text-center dont-have">Already have an account? <a
-                                    href="{{ route('staff.login') }}">Login</a>
+                                    href="{{ route('teacher.login') }}">Login</a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +100,7 @@
         </div>
     </div>
     <!-- /Main Wrapper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     <!-- jQuery -->

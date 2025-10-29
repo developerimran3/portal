@@ -1,4 +1,4 @@
-@extends('staff.layouts.app')
+@extends('teacher.layouts.app')
 @section('main')
     <div class="page-wrapper">
 
@@ -8,7 +8,7 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title">Welcome {{ Auth::guard('staff')->user()->name }}</h3>
+                        <h3 class="page-title">Welcome {{ Auth::guard('teacher')->user()->name }}</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ul>
@@ -26,11 +26,11 @@
                                     <i class="fe fe-users"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>168</h3>
+                                    <h3>{{ $students }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Doctors</h6>
+                                <h6 class="text-muted">Total Students </h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-primary w-50"></div>
                                 </div>
@@ -46,7 +46,7 @@
                                     <i class="fe fe-credit-card"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>487</h3>
+                                    <h3>56</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">

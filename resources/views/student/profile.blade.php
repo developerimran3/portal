@@ -1,4 +1,4 @@
-@extends('staff.layouts.app')
+@extends('student.layouts.app')
 @section('main')
     <div class="page-wrapper">
         <div class="content container-fluid">
@@ -25,16 +25,16 @@
                             <div class="col-auto profile-image">
                                 <a href="#">
                                     <img class="rounded-circle" alt="User Image"
-                                        src="{{ URL::to('media/staff/' . Auth::guard('staff')->user()->photo) }}">
+                                        src="{{ URL::to('media/student/' . Auth::guard('student')->user()->photo) }}">
                                 </a>
                             </div>
                             <div class="col ml-md-n2 profile-user-info">
-                                <h4 class="user-name mb-0">{{ Auth::guard('staff')->user()->name }}</h4>
-                                <h6 class="text-muted">{{ Auth::guard('staff')->user()->email }}</h6>
+                                <h4 class="user-name mb-0">{{ Auth::guard('student')->user()->name }}</h4>
+                                <h6 class="text-muted">{{ Auth::guard('student')->user()->email }}</h6>
                                 <div class="user-Location"><i class="fa fa-map-marker"></i>
-                                    {{ Auth::guard('staff')->user()->address }}</div>
-                                <div class="about-text text-danger">Possition:
-                                    {{ Auth::guard('staff')->user()->role }}
+                                    {{ Auth::guard('student')->user()->address }}</div>
+                                <div class="about-text text-danger">Skill:
+                                    {{ Auth::guard('student')->user()->skill }}
                                 </div>
                             </div>
                             <div class="col-auto profile-btn">
@@ -53,7 +53,6 @@
                                 <a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
                             </li>
                         </ul>
-
                     </div>
                     <div class="tab-content profile-tab-cont">
 
@@ -72,23 +71,24 @@
                                             </h5>
                                             <div class="row">
                                                 <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
-                                                <p class="col-sm-10"> {{ Auth::guard('staff')->user()->name }}</p>
+                                                <p class="col-sm-10"> {{ Auth::guard('student')->user()->name }}</p>
                                             </div>
                                             <div class="row">
                                                 <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Email ID</p>
-                                                <p class="col-sm-10"> {{ Auth::guard('staff')->user()->email }}</p>
+                                                <p class="col-sm-10"> {{ Auth::guard('student')->user()->email }}</p>
                                             </div>
                                             <div class="row">
                                                 <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
-                                                <p class="col-sm-10"> {{ Auth::guard('staff')->user()->phone }}</p>
+                                                <p class="col-sm-10"> {{ Auth::guard('student')->user()->phone }}</p>
                                             </div>
                                             <div class="row">
-                                                <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Possition</p>
-                                                <p class="col-sm-10"> {{ Auth::guard('staff')->user()->role }}</p>
+                                                <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Skill</p>
+                                                <p class="col-sm-10"> {{ Auth::guard('student')->user()->skill }}</p>
                                             </div>
                                             <div class="row">
                                                 <p class="col-sm-2 text-muted text-sm-right mb-0">Address</p>
-                                                <p class="col-sm-10 mb-0"> {{ Auth::guard('staff')->user()->address }} </p>
+                                                <p class="col-sm-10 mb-0"> {{ Auth::guard('student')->user()->address }}
+                                                </p>
                                             </div>
 
                                         </div>
