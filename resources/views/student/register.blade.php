@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    @include('layouts.header-menu')
+    @include('layouts.components.home-menu')
 
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
@@ -43,7 +43,7 @@
                             <h1>Student Register</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <div class="form-group">
-                                @include('layouts.message')
+                                @include('layouts.components.message')
                             </div>
                             <!-- Form -->
                             <form action="{{ route('student.register') }}" method="POST" enctype="multipart/form-data">

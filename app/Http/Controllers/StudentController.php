@@ -12,7 +12,7 @@ class StudentController extends Controller
 {
     public function studentDashboard()
     {
-        return view("student.index");
+        return view("account.dashboard");
     }
 
     public function showRegister()
@@ -62,7 +62,7 @@ class StudentController extends Controller
 
         if (Auth::guard('student')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('student.profile')->with('success', 'Login Successful');
+            return redirect()->route('student.dashboard')->with('success', 'Login Successful');
         }
 
         return back()->withErrors([
@@ -73,7 +73,11 @@ class StudentController extends Controller
 
     public function studentProfile()
     {
-        return view("student.profile");
+        return view("account.profile");
+    }
+    public function account()
+    {
+        return view("account.dashboard");
     }
 
 

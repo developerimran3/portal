@@ -29,24 +29,24 @@
 </head>
 
 <body>
-    @include('layouts.components.home-menu')
+    @include('layouts.header-menu')
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
         <div class="login-wrapper">
             <div class="container">
                 <div class="loginbox">
                     <div class="login-left">
-                        <img class="img-fluid" src="{{ asset('assets/img/staff.webp') }}" alt="Logo">
+                        <img class="img-fluid" src="{{ asset('assets/img/student.png') }}" alt="Logo">
                     </div>
                     <div class="login-right">
                         <div class="login-right-wrap">
-                            <h1>Staff Login</h1>
+                            <h1>Student Login</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <div class="form-group">
-                                @include('layouts.components.message')
+                                @include('layouts.message')
                             </div>
                             <!-- Form -->
-                            <form action="{{ route('staff.login') }}" method="POST">
+                            <form action="{{ route('student.login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <input class="form-control" type="email" placeholder="Email" name="email">
@@ -77,7 +77,7 @@
                             <!-- /Social Login -->
 
                             <div class="text-center dont-have">Don’t have an account? <a
-                                    href="{{ route('staff.register') }}">Register</a></div>
+                                    href="{{ route('student.register') }}">Register</a></div>
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
 
     <!-- Custom JS -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
+
 
 </body>
 

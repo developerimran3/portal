@@ -28,24 +28,25 @@
 </head>
 
 <body>
-    @include('layouts.components.home-menu')
+    @include('layouts.header-menu')
+
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
         <div class="login-wrapper">
             <div class="container">
                 <div class="loginbox">
                     <div class="login-left">
-                        <img class="img-fluid" src="{{ asset('assets/img/teacher.png') }}" alt="Logo">
+                        <img class="img-fluid" src="{{ asset('assets/img/student.png') }}" alt="Logo">
                     </div>
                     <div class="login-right">
                         <div class="login-right-wrap">
-                            <h1>Teacher Register</h1>
+                            <h1>Student Register</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <div class="form-group">
-                                @include('layouts.components.message')
+                                @include('layouts.message')
                             </div>
                             <!-- Form -->
-                            <form action="{{ route('teacher.register') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('student.register') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Name" name="name"
@@ -64,8 +65,8 @@
                                         value="{{ old('phone') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Degree" name="degree"
-                                        value="{{ old('degree') }}">
+                                    <input class="form-control" type="text" placeholder="Skill" name="skill"
+                                        value="{{ old('skill') }}">
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Address" name="address"
@@ -90,7 +91,7 @@
                             </form>
                             <!-- /Form -->
                             <div class="text-center dont-have">Already have an account? <a
-                                    href="{{ route('teacher.login') }}">Login</a>
+                                    href="{{ route('student.login') }}">Login</a>
                             </div>
                         </div>
                     </div>

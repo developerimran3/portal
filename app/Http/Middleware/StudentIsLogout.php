@@ -17,7 +17,7 @@ class StudentIsLogout
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::guard("student")->user()) {
-            return redirect(route("student.profile"));
+            return redirect(route("student.dashboard"));
         }
         return $next($request);
     }

@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    @include('layouts.header-menu')
+    @include('layouts.components.home-menu')
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
         <div class="login-wrapper">
@@ -43,7 +43,7 @@
                             <h1>Staff Register</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <div class="form-group">
-                                @include('layouts.message')
+                                @include('layouts.components.message')
                             </div>
                             <!-- Form -->
                             <form action="{{ route('staff.register') }}" method="POST" enctype="multipart/form-data">
@@ -105,7 +105,7 @@
         </div>
     </div>
     <!-- /Main Wrapper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
     <!-- jQuery -->

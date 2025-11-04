@@ -1,22 +1,30 @@
-@extends('teacher.layouts.app')
+@extends('layouts.app')
 @section('main')
     <div class="page-wrapper">
-
         <div class="content container-fluid">
-
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title">Welcome {{ Auth::guard('teacher')->user()->name }}</h3>
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ul>
+                        <h3 class="page-title">Welcome
+                            @if (Auth::guard('student')->user())
+                                {{ Auth::guard('student')->user()->name }}
+                            @endif
+                            @if (Auth::guard('teacher')->user())
+                                {{ Auth::guard('teacher')->user()->name }}
+                            @endif
+                            {{-- staff --}}
+                            @if (Auth::guard('staff')->user())
+                                {{ Auth::guard('staff')->user()->name }}
+                                <br>
+                                Possition:
+                                <span class="text-success">{{ Auth::guard('staff')->user()->role }}</span>
+                            @endif
+                        </h3>
                     </div>
                 </div>
             </div>
             <!-- /Page Header -->
-
             <div class="row">
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="card">
@@ -26,11 +34,11 @@
                                     <i class="fe fe-users"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>{{ $students }}</h3>
+                                    <h3>168</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Total Students </h6>
+                                <h6 class="text-muted">Doctors</h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-primary w-50"></div>
                                 </div>
@@ -46,7 +54,7 @@
                                     <i class="fe fe-credit-card"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>56</h3>
+                                    <h3>487</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -104,7 +112,6 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-6">
-
                     <!-- Sales Chart -->
                     <div class="card card-chart">
                         <div class="card-header">
@@ -115,10 +122,8 @@
                         </div>
                     </div>
                     <!-- /Sales Chart -->
-
                 </div>
                 <div class="col-md-12 col-lg-6">
-
                     <!-- Invoice Chart -->
                     <div class="card card-chart">
                         <div class="card-header">

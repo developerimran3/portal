@@ -17,7 +17,7 @@ class StaffIsLogout
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::guard("staff")->user()) {
-            return redirect(route("staff.profile"));
+            return redirect(route("staff.dashboard"));
         }
         return $next($request);
     }

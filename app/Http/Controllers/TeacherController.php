@@ -13,7 +13,7 @@ class TeacherController extends Controller
     public function teacherDashboard()
     {
         $students = Student::count();
-        return view("teacher.index", compact("students"));
+        return view("account.dashboard", compact("students"));
     }
 
     public function showRegister()
@@ -63,7 +63,7 @@ class TeacherController extends Controller
 
         if (Auth::guard('teacher')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('teacher.profile')->with('success', 'Login Successful');
+            return redirect()->route('teacher.dashboard')->with('success', 'Login Successful');
         }
 
         return back()->withErrors([
@@ -74,7 +74,7 @@ class TeacherController extends Controller
 
     public function teacherProfile()
     {
-        return view("teacher.profile");
+        return view("account.profile");
     }
 
     public function studentAll()

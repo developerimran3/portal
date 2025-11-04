@@ -37,14 +37,14 @@
                      </ul>
                  </li>
                  <li class="submenu">
-                     <a href="#"><i class="fe fe-book"></i> <span>Study Materials</span> <span
+                     <a href="#"><i class="fa fa-book"></i> <span>Study Materials</span> <span
                              class="menu-arrow"></span></a>
                      <ul style="display: none;">
                          <li><a href="#">Download Notice/Files</a></li>
                      </ul>
                  </li>
                  <li class="submenu">
-                     <a href="#"><i class="fe fe-comment"></i> <span>Notice & Message</span> <span
+                     <a href="#"><i class="fa fa-comment-o"></i> <span>Notice & Message</span> <span
                              class="menu-arrow"></span></a>
                      <ul style="display: none;">
                          <li><a href="#">School Notice Board</a></li>
@@ -53,7 +53,7 @@
 
                  </li>
                  <li class="submenu">
-                     <a href="#"><i class="fe fe-credit-card"></i> <span>Fees & Payments</span> <span
+                     <a href="#"><i class="fa fa-credit-card"></i> <span>Fees & Payments</span> <span
                              class="menu-arrow"></span></a>
                      <ul style="display: none;">
                          <li><a href="#">View Fee Detailes</a></li>
@@ -66,7 +66,7 @@
                  <li>
                      <a
                          href="{{ route('student.logout') }}"onclick="return confirm('Are you sure you want to Logout?');"><i
-                             class="fe fe-sign-out"></i> <span>Logout</span></a>
+                             class="fa fa-sign-out"></i> <span>Logout</span></a>
                  </li>
 
 
@@ -104,7 +104,7 @@
                      </ul>
                  </li>
                  <li class="submenu">
-                     <a href="#"><i class="fe fe-comment-o"></i> <span>Massage/Notice</span> <span
+                     <a href="#"><i class="fa fa-comment-o"></i> <span>Massage/Notice</span> <span
                              class="menu-arrow"></span></a>
                      <ul style="display: none;">
                          <li><a href="#">Send Massage To Student</a></li>
@@ -114,7 +114,7 @@
                      <a href="#"><i class="fe fe-layout"></i> <span>Exam Scheduls</span></a>
                  </li>
                  <li class="submenu">
-                     <a href="#"><i class="fe fe-book"></i> <span>Study Materials</span> <span
+                     <a href="#"><i class="fa fa-book"></i> <span>Study Materials</span> <span
                              class="menu-arrow"></span></a>
                      <ul style="display: none;">
                          <li><a href="#">Upload Notice/File</a></li>

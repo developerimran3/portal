@@ -11,7 +11,7 @@ class StaffController extends Controller
 {
     public function staffDashboard()
     {
-        return view("staff.index");
+        return view("account.dashboard");
     }
 
     public function showRegister()
@@ -57,11 +57,9 @@ class StaffController extends Controller
             'password' => 'required',
         ]);
 
-
-
         if (Auth::guard('staff')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('staff.profile')->with('success', 'Login Successful');
+            return redirect()->route('staff.dashboard')->with('success', 'Login Successful');
         }
 
         return back()->withErrors([
@@ -72,7 +70,11 @@ class StaffController extends Controller
 
     public function staffProfile()
     {
-        return view("staff.profile");
+        return view("account.profile");
+    }
+    public function account()
+    {
+        return view("account.dashboard");
     }
 
 

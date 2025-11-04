@@ -13,21 +13,26 @@ Route::get("/", function () {
 /**
  *  Staff 
  */
-Route::get("/dashboard/staff", [StaffController::class, "staffDashboard"])->name("staff.index")->middleware("staff-login");
+Route::get("/dashboard/staff", [StaffController::class, "staffDashboard"])->name("staff.dashboard")->middleware("staff-login");
 
 Route::get("/staff-login", [StaffController::class, "showLogin"])->name("staff.login")->middleware("staff-logout");
 Route::post("/staff-login", [StaffController::class, "staffLogin"])->name("staff.login");
 Route::get("/dashboard/staff-profile", [StaffController::class, "staffProfile"])->name("staff.profile")->middleware("staff-login");
+Route::get("/dashboard/staff-account", [StaffController::class, "account"])->name("staff.account");
 
 Route::get("/staff-register", [StaffController::class, "showRegister"])->name("staff.register")->middleware("staff-logout");
 Route::post("/staff-register", [StaffController::class, "staffRegister"])->name("staff.register");
 Route::get("/dashboard/staff-logout", [StaffController::class, "staffLogout"])->name("staff.logout")->middleware("staff-login");
 
+
+
+
+
 //------------------------------------------------------------------------------------------//
 /**
  *  Teacher Dashboard
  */
-Route::get("/dashboard/teacher", [TeacherController::class, "teacherDashboard"])->name("teacher.index");
+Route::get("/dashboard/teacher", [TeacherController::class, "teacherDashboard"])->name("teacher.dashboard");
 
 Route::get("/teacher-login", [TeacherController::class, "showLogin"])->name("teacher.login")->middleware("teacher-logout");
 Route::post("/teacher-login", [TeacherController::class, "teacherLogin"])->name("teacher.login");
@@ -41,7 +46,7 @@ Route::get("/dashboard/teacher-logout", [TeacherController::class, "teacherLogou
 /**
  *  Student Dashboard
  */
-Route::get("/dashboard/student", [StudentController::class, "studentDashboard"])->name("student.index");
+Route::get("/dashboard/student", [StudentController::class, "studentDashboard"])->name("student.dashboard");
 
 Route::get("/student-login", [StudentController::class, "showLogin"])->name("student.login")->middleware("student-logout");
 Route::post("/student-login", [StudentController::class, "studentLogin"])->name("student.login");
